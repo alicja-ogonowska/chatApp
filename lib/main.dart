@@ -81,10 +81,12 @@ class ChatView extends StatelessWidget {
                 stream: messagesQuery.snapshots(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const SizedBox(
-                        height: 100,
-                        width: 100,
-                        child: CircularProgressIndicator());
+                    return const Center(
+                      child: SizedBox(
+                          height: 50,
+                          width: 50,
+                          child: CircularProgressIndicator()),
+                    );
                   }
                   return ListView.builder(
                     reverse: true,
